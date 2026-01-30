@@ -17,7 +17,7 @@ configurations, and deployment details are **intentionally omitted**.
 
 ## Simplified Orchestration Logic (Pseudocode)
 ```
-LOOP every fixed interval:
+LOOP every 60 seconds:
     capture network traffic into a timestamped PCAP file
 
 FOR each new PCAP batch:
@@ -33,7 +33,7 @@ IGNORE directories already marked as processed
 ```
 
 ## Automation Flow (Simplified)
-1. Bash automation triggers tcpdump on a fixed interval
+1. Bash automation triggers tcpdump on a fixed interval (60s)
 2. PCAP files are written using timestamp-based naming
 3. Zeek processes each capture batch to generate structured logs
 4. Log directories are transferred to a centralized analysis server
